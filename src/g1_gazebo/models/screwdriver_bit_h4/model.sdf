@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="screwdriver_bit_h4">
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.0250 0 0 0</pose>
+        <mass>0.042</mass>
+        <inertia><ixx>9.254e-06</ixx><iyy>9.254e-06</iyy><izz>1.008e-06</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia>
+      </inertial>
+      <collision name="shank_0">
+        <pose>0 0 0.018 0 0 0.000000</pose>
+        <geometry><box><size>0.012 0.006928 0.036</size></box></geometry>
+        <surface><friction><ode><mu>0.8</mu><mu2>0.8</mu2></ode></friction></surface>
+      </collision>
+      <collision name="shank_1">
+        <pose>0 0 0.018 0 0 1.047198</pose>
+        <geometry><box><size>0.012 0.006928 0.036</size></box></geometry>
+        <surface><friction><ode><mu>0.8</mu><mu2>0.8</mu2></ode></friction></surface>
+      </collision>
+      <collision name="shank_2">
+        <pose>0 0 0.018 0 0 2.094395</pose>
+        <geometry><box><size>0.012 0.006928 0.036</size></box></geometry>
+        <surface><friction><ode><mu>0.8</mu><mu2>0.8</mu2></ode></friction></surface>
+      </collision>
+      <collision name="tip">
+        <pose>0 0 0.043 0 0 0</pose>
+        <geometry><cylinder><radius>0.0045</radius><length>0.014000000000000005</length></cylinder></geometry>
+        <surface><friction><ode><mu>0.8</mu><mu2>0.8</mu2></ode></friction></surface>
+      </collision>
+      <visual name="visual">
+        <geometry><mesh><uri>model://screwdriver_bit_h4/meshes/bit_h4.stl</uri></mesh></geometry>
+        <material>
+          <ambient>0.45 0.46 0.48 1</ambient>
+          <diffuse>0.62 0.63 0.66 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
