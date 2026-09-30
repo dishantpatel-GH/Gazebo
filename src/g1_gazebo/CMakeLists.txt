@@ -10,4 +10,8 @@ install(DIRECTORY launch config worlds models robots
   DESTINATION share/${PROJECT_NAME}
 )
 
+install(PROGRAMS scripts/move_loose_bit.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()

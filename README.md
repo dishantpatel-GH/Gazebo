@@ -189,6 +189,15 @@ All bits are movable, and 2× real size so the Dex1 gripper can hold them:
 - Friction coefficient 0.8.
 - The model origin is at the flat end of the shank, with +z pointing toward the tip.
 
+**Moving the loose bit:** the bit always starts at the same pose; nothing randomizes it. To test your system at other poses, move the bit while the simulation is running:
+
+```bash
+# center at x = 0.36 m, y = 0.12 m, tip pointing along yaw = 0.8 rad (0 = +x, away from the robot)
+ros2 run g1_gazebo move_loose_bit.py 0.36 0.12 --yaw 0.8
+```
+
+This lays the bit flat on the table at that pose. You can also drag it with the move and rotate tools in the Gazebo GUI toolbar. To change the starting pose permanently, edit `LOOSE_BIT_CENTER` / `LOOSE_BIT_YAW` in `scripts/generate_scene_assets.py` (see section 6).
+
 **Ground-truth poses** are not published to ROS; the robot is meant to perceive the objects through its cameras. You can still query them from Gazebo for debugging:
 
 ```bash
@@ -219,6 +228,7 @@ gz model --list                   # all model names
     ├── worlds/g1_table.sdf               the world (generated)
     ├── models/                           bit tray + 15 bit models (generated)
     ├── scripts/generate_scene_assets.py  generates worlds/ and models/
+    ├── scripts/move_loose_bit.py         moves the loose bit in a running simulation
     └── robots/g1_description/            Unitree G1 + Dex1-1 URDF, meshes, Unitree license
 ```
 
